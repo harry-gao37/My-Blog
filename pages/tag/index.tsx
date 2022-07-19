@@ -34,8 +34,8 @@ const Tag = () =>{
   const {userId} = store?.user?.userInfo || {};
   const [needRefresh,setNeedRefresh] = useState(false);
 
-  useEffect(() =>{
-    request('api/tag/get').then((res: any) =>{
+  useEffect(() => {
+    request.get('/api/tag/get').then((res: any) =>{
       if (res?.code === '000000'){
         const {followTags=[], allTags = []} = res?.data || {};
         setFollowTags(followTags);
@@ -44,10 +44,11 @@ const Tag = () =>{
       }
     })
   },[needRefresh])
+  // needRefresh
 
 
   const handleFollow = (tagId: number) =>{
-    request.post('api/tag/follow',{
+    request.post('/api/tag/follow',{
       tagId,
       type: 'follow'
     }).then((res: any) =>{
@@ -62,15 +63,13 @@ const Tag = () =>{
 
   }
   const handleUnFollow = (tagId: number) =>{
-    request.post('api/tag/follow',{
+    request.post('/api/tag/follow',{
       tagId,
       type: 'unfollow'
     }).then((res: any) =>{
       if (res?.code === '000000'){
         message.success("取关成功")
         setNeedRefresh(!needRefresh)
-
-
       }else{
         message.error("取关失败" || res?.msg)
       }

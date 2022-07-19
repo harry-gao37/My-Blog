@@ -25,7 +25,7 @@ async function detail(req: NextApiRequest, res: NextApiResponse) {
 
 if (user){
     res?.status(200).json({
-        code: 0,
+        code: '000000',
         msg: '登录成功',
         data: {
           userInfo: user,
@@ -35,8 +35,6 @@ if (user){
             ...EXCEPTION_USER.NOT_FOUND
           });
     }
-
-
 }
 
 

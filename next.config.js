@@ -2,13 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // images:{
-  //   domains: []
-  // }
+  pageExtensions: ['js', 'jsx', 'md', 'mdx','ts','tsx'],
 }
 
-
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
 
 // next.config.js
 const removeImports = require('next-remove-imports')();
-module.exports = removeImports(nextConfig);
+module.exports = removeImports(withMDX(nextConfig));

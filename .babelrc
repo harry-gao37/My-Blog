@@ -1,6 +1,6 @@
 {
     "presets": ["next/babel"],
-    "compact": false,
+    // "compact": false,
     "plugins": [
         "babel-plugin-transform-typescript-metadata",
         ["@babel/plugin-proposal-decorators", { "legacy": true }],

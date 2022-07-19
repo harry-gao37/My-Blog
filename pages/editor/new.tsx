@@ -27,8 +27,8 @@ const Editor = () =>{
 
 
   useEffect(()=>{
-    request('api/tag/get').then((res: any)=>{
-      if (res?.code === 0 ){
+    request.get('api/tag/get').then((res: any)=>{
+      if (res?.code === '000000' ){
         setAllTags(res?.data?.allTags || [])
       }
     })
@@ -38,6 +38,7 @@ const Editor = () =>{
   const handlePublish =() =>{
     if( !title){
       message.warning('请输入文章标题')
+      return;
     }else{
       request.post('/api/article/publish',
       {

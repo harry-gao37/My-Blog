@@ -1,6 +1,6 @@
 import userStore, {IUserStore} from './userStore';
 
-//初始值收纳
+//allow manage multiple components
 
 export interface IStore {
     user: IUserStore;
@@ -10,6 +10,7 @@ export interface IStore {
     return () => {
       return {
         user: { ...userStore(), ...initialValue?.user },
+        //here can collect other component info
       };
     };
   }

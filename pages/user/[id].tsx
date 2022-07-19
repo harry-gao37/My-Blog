@@ -9,9 +9,53 @@ import ListItem from 'components/ListItem';
 import Link from 'next/link'
 
 
+//static page:
+// export async function getStaticPaths(){
+//   const db = await AppDataSource.initialize();
+//   const userRepo = db.getRepository(User)
+//   const users = await userRepo.find();
+//   const userIds = users?.map(user =>({params: { id: String(user?.id)}}))
+
+//   return {
+//     paths: userIds,
+//     fallback: 'blocking'
+//   }
+// }
+
+// export async function getStaticProps({params}: {params: any}) {
+//   const userId = params?.id;
+//   const db = await AppDataSource.initialize();
+//   const userRepo =  db.getRepository(User) ;
+//    const articleRepo =  db.getRepository(Article)
+
+  
+//   const user = await userRepo.findOne({
+//     where: {
+//       id: Number(userId)
+//     }
+//   });
+
+//   const articles = await articleRepo.find({
+//     where:{
+//       object: {
+//         id: Number(userId)
+//       }
+//     },
+//     relations:['object', 'tags']
+//   })
 
 
-export async function getServerSideProps({params}: any) {
+//   return {
+//     props: {
+//       userInfo: JSON.parse(JSON.stringify(user)),
+//       article: JSON.parse(JSON.stringify(articles)) || [],
+//     }
+//   }
+// }
+
+
+
+export async function getServerSideProps({params}: {params: any}) {
 
   const userId = params?.id;
   const db = await AppDataSource.initialize();
@@ -51,9 +95,6 @@ export async function getServerSideProps({params}: any) {
 const UserDetail = (props: any) =>{
   const {userInfo = {}, article = [] } = props;
   const viewsCount = article?.reduce((prev: any,next: any) => prev + next?.views, 0)
-
-
-
 
   return (
     <div className={styles.userDetail}>

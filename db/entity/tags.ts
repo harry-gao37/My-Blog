@@ -21,7 +21,7 @@ export class Tag {
 
     @ManyToMany(() => User, {
         cascade: true
-    })
+        })
     @JoinTable({
         name: 'tags_users_rel',
         joinColumn:{

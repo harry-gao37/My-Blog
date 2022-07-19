@@ -53,7 +53,7 @@ const Login = (props: IProps) => {
         identity_type: 'phone',
       })
       .then((res: any) => {
-        if (res?.code === 0) {
+        if (res?.code === '000000') {
           // 登录成功
           store.user.setUserInfo(res?.data);
           onClose && onClose();

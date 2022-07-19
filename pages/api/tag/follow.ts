@@ -57,7 +57,4 @@ async function follow(req: NextApiRequest, res: NextApiResponse) {
     }else{
         res.status(200).json({...EXCEPTION_TAG?.FOLLOW_FAILED})
     }
-
-
-
 } 

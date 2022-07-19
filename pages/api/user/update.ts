@@ -32,7 +32,7 @@ if (user){
     const resUser = userRepo.save(user);
 
     res?.status(200).json({
-        code: 0,
+        code: '000000',
         msg: '',
         data: resUser});
     } else {

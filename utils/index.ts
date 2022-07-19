@@ -6,7 +6,8 @@ interface ICookieInfo{
 
 
 export const setCookie = (cookies : any,{id, nickname,avatar}: ICookieInfo) =>{
-    const expires = new Date(Date.now()+ 24*60*60*1000*2);
+    //login limit 24h
+    const expires = new Date(Date.now()+ 24*60*60*1000);
     const path ="/";
 
     cookies.set('userId',id,{

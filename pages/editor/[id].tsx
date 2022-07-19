@@ -33,7 +33,7 @@ export async function getServerSideProps({params}: any) {
   
     return {
       props: {
-        article: JSON.parse(JSON.stringify(article)) || [],
+        article: JSON.parse(JSON.stringify(article)) ,
       }
     }
   }
@@ -48,25 +48,26 @@ const ModifyEditor = ({ article }: IProps) =>{
   
   // const store = useStore();
   // const {userId} = store.user.userInfo;
-  const {tags} = article;
+  // const {tags} = article;
   const [title, setTitle] = useState(article?.title || '');
   const [content, setContent] = useState(article?.content || '')
   const {push,query} = useRouter();
-  const articleId = Number(query.id);
-  const [allTags, setAllTags] = useState(tags ||[])
+  const articleId = Number(query?.id);
+  const [allTags, setAllTags] = useState([])//Tags
   const [TagIds, setTagIds] = useState([])
 
   useEffect(()=>{
-    request('api/tag/get').then((res: any)=>{
-      if (res?.code === 0 ){
+    request.get('api/tag/get').then((res: any)=>{
+      if (res?.code === '000000' ){
         setAllTags(res?.data?.allTags || [])
       }
     })
   },[])
 
-  const handlePublish =() =>{
+  const handlePublish = () =>{
     if(!title){
-      message.warning('请输入文章标题')
+      message.warning('请输入文章标题');
+      return;
     }else{
       request.post('/api/article/update',
       {

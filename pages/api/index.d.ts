@@ -17,6 +17,8 @@ export type ITags = {
     icon: string;
     follow_count: number;
     article_count: number;
+    object: IUserInfo[];
+    articles: IArticle[]
 }
 
 export type IArticle = {

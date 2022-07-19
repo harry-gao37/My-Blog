@@ -23,9 +23,14 @@ async function redirect(req: NextApiRequest, res: NextApiResponse) {
         }
     })
 
-    const tags = await tagRepo.find({
-        where: tagIds?.map((tagId: number) =>({id: tagId}))
+
+
+    const selectedTag: any[] = [];
+
+    tagIds.map(async (tagId: number) =>{
+        selectedTag?.concat(await tagRepo.createQueryBuilder("tag").where('id: :tagid'),{tagid: tagId})
     })
+
 
     const article = new Article();
     article.title = title;
@@ -38,9 +43,9 @@ async function redirect(req: NextApiRequest, res: NextApiResponse) {
     if (user){
         article.object = user;
     }
-    if (tags){
+    if (selectedTag){
         
-        const newTags = tags?.map(tag =>{
+        const newTags = selectedTag?.map(tag =>{
             tag.article_count = tag?.article_count + 1;
             return tag;
         })

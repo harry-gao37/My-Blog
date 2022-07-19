@@ -1,3 +1,4 @@
+//Global Management
 import React, { createContext, ReactElement, useContext } from 'react';
 import { useLocalObservable, enableStaticRendering } from 'mobx-react-lite';
 import createStore, { IStore } from './rootStore';
@@ -9,7 +10,7 @@ interface IProps {
 
 enableStaticRendering(!process.browser);
 
-const StoreContext = createContext({});
+const StoreContext = createContext({}); //avoid tree shape like put into a container
 
 export const StoreProvider = ({ initialValue, children }: IProps) => {
   const store: IStore = useLocalObservable(createStore(initialValue));

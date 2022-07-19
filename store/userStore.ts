@@ -5,6 +5,7 @@ export type IUserInfo = {
     id?: number,
   };
   
+  // globally manage userinfo
   export interface IUserStore {
     userInfo: IUserInfo;
     // eslint-disable-next-line no-unused-vars

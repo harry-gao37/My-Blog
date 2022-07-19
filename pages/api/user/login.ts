@@ -48,7 +48,7 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
       setCookie(cookies, { id, nickname, avatar });
 
       res?.status(200).json({
-        code: 0,
+        code: '000000',
         msg: '登录成功',
         data: {
           userId: id,
@@ -84,7 +84,7 @@ async function login(req: NextApiRequest, res: NextApiResponse) {
       setCookie(cookies, { id, nickname, avatar });
 
       res?.status(200).json({
-        code: 0,
+        code: '000000',
         msg: '登录成功',
         data: {
           userId: id,

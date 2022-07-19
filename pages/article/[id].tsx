@@ -20,7 +20,7 @@ interface IProps {
 export async function getServerSideProps({params}: any) {
 
 
-    const articleId = params.id;
+    const articleId = params?.id;
     console.log(AppDataSource.isInitialized)
     const db = await AppDataSource.initialize();
     const articleRepo =  db.getRepository(Article)
@@ -46,9 +46,7 @@ export async function getServerSideProps({params}: any) {
       await articleRepo.save(article);
     }
   
-  
-    console.log(article);
-  
+    
     return {
       props: {
         article: JSON.parse(JSON.stringify(article)) || [],
@@ -58,12 +56,12 @@ export async function getServerSideProps({params}: any) {
 
   const ArticleDetail = (props: IProps) =>{
     const {article} = props;
-    const {object: {nickname,avatar,id}, comments} = article;
+    const {object: {nickname,avatar,id}} = article;
     const store = useStore(); 
     const loginUserInfo = store?.user?.userInfo;
 
     const [inputVal, setInputVal] = useState('');
-    const [newcomments, setNewComments] = useState(comments || []);
+    const [newcomments, setNewComments] = useState(article?.comments || []);
 
 
   const handleComment =() =>{
@@ -132,7 +130,7 @@ export async function getServerSideProps({params}: any) {
           <Divider/>
           <div className={styles.display}>
             {
-              comments?.map((comment: any) => (
+              newcomments?.map((comment: any) => (
                 <div className={styles.wrapper} key={comment?.id}>
                   <Avatar src={comment?.user?.avatar} size={40}/>
                   <div className={styles.info}>
