@@ -1,6 +1,6 @@
 # Server-Side Rendering Web Blog
 
-> Server-Side Rendering Web Blog with the back end using the currently popular SpringBoot-SpringCloud microservices architecture, uses components such as Feign, Gateway, Hystrix, and Alibaba's Nacos to build the foundation environment for the project. The project also uses MyBatisPlus for persistent layer operations, uses OAuth2-JWT for distributed access, and integrates Spring Security for permission control. In addition, the project uses Alibaba's EasyExcel to implement read and write to Excel, Redis to cache home page data, Git for code version control, and Swagger to generate interface documents.
+> Server-Side Rendering Web Blog is a project constructed on Next.js, a React-based Framework, and programmed in the most powerful programming language -- Typescript.This project mainly uses SSR which suits for optimizing SEO to display the Homepage List, provides Markdown Editor to create and edit articles, and displays comments related to the articles in the latest time order.The project also realizes Login pop-up module by providing two options: SMS login and Github+OAuth2.0 three-party login and uses cookies to achieve global status retention.In addition, the project utilizes TypeORM to map databases and allows users to manage tags they belong to in CSR and edit their own information.
 
 Example：[https://www.juejin.cn/](https://juejin.cn/)
 
