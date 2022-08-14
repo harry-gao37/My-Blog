@@ -6,7 +6,7 @@ Example：[https://www.juejin.cn/](https://juejin.cn/)
 
 ## System modules and architecture
 
-![](https://github.com/harry-gao37/my-blog/Project_Structure.png)
+![](https://github.com/harry-gao37/my-blog/blob/02505d199e2109e540bf613c00a34cd0ff13b219/Project_Structure.png)
 ![](https://github.com/sbchengyiwei/guli-online-study-website/blob/main/System%20architecture.png)
 
 
