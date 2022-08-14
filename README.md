@@ -1,4 +1,13 @@
-#Server-Side Rendering Web Blog
+# Server-Side Rendering Web Blog
+
+> Server-Side Rendering Web Blog with the back end using the currently popular SpringBoot-SpringCloud microservices architecture, uses components such as Feign, Gateway, Hystrix, and Alibaba's Nacos to build the foundation environment for the project. The project also uses MyBatisPlus for persistent layer operations, uses OAuth2-JWT for distributed access, and integrates Spring Security for permission control. In addition, the project uses Alibaba's EasyExcel to implement read and write to Excel, Redis to cache home page data, Git for code version control, and Swagger to generate interface documents.
+
+Example：[https://www.juejin.cn/](https://juejin.cn/)
+
+## System modules and architecture
+
+![](https://github.com/sbchengyiwei/guli-online-study-website/blob/main/System%20modules.png)
+![](https://github.com/sbchengyiwei/guli-online-study-website/blob/main/System%20architecture.png)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -28,10 +37,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
