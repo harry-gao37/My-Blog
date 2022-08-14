@@ -1,13 +1,13 @@
 # Server-Side Rendering Web Blog
 
-> Server-Side Rendering Web Blog is a project constructed on Next.js, a React-based Framework, and programmed in the most powerful programming language -- Typescript.This project mainly uses SSR which suits for optimizing SEO to display the Homepage List, provides Markdown Editor to create and edit articles, and displays comments related to the articles in the latest time order.The project also realizes Login pop-up module by providing two options: SMS login and Github+OAuth2.0 three-party login and uses cookies to achieve global status retention.In addition, the project utilizes TypeORM to map databases and allows users to manage tags they belong to in CSR and edit their own information.
+> Server-Side Rendering Web Blog is a project constructed on Next.js, a React-based Framework, and programmed in the most powerful programming language -- Typescript. This project mainly uses SSR which suits for optimizing SEO to display the Homepage List, provides Markdown Editor to create and edit articles, and displays comments related to the articles in the latest time order. The project also realizes Login pop-up module by providing two options: SMS login and Github+OAuth2.0 three-party login and uses cookies to achieve global status retention. In addition, the project utilizes TypeORM to map databases and allows users to manage tags they belong to in CSR and edit their own information.
 
 Example：[https://www.juejin.cn/](https://juejin.cn/)
 
 ## System modules and architecture
 
 ![](https://github.com/harry-gao37/my-blog/blob/02505d199e2109e540bf613c00a34cd0ff13b219/Project_Structure.png)
-![](https://github.com/sbchengyiwei/guli-online-study-website/blob/main/System%20architecture.png)
+
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
